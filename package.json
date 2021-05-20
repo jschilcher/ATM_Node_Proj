@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/jschilcher/ATM_Node_Proj/issues"
   },
-  "homepage": "https://github.com/jschilcher/ATM_Node_Proj#readme"
+  "homepage": "https://github.com/jschilcher/ATM_Node_Proj#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
 }
