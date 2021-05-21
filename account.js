@@ -1,7 +1,5 @@
 "use strict";
 
-const prompt = require("prompt-sync")();
-
 let userPin = 1234;
 
 let bankAccountBalance = 4000;
