@@ -15,26 +15,18 @@ let atmMenu = prompt("What would you like to do? check balance, withdraw, deposi
 
 switch(atmMenu){
     case "check balance":
-        atm.getBalance(balance);
+        console.log();
         timeToExit(userInput);
         break;
     case "withdraw":
+        let userWithDrawl = prompt("How much would you like to withdrawl?");
+        let newBalance = atm.withdrawl(userWithDrawl);
+        console.log(newBalance);
+        let userInput = prompt("Is there anything else you would like to do today?");
+        atm.exit(userInput);
         break;
     case "deposit":
         break;
     case "exit":
 
-}
-
-function timeToExit(userInput){
-    let userInput = prompt("Is there anything else you would like to do today?");
-    if(userInput == "yes"){
-        atmMenu
-    }
-    else if(userInput == "no"){
-        console.log("Have an AMAZING day!! Goodbye!")
-    }
-    else{
-        console.log("I am sorry I didn't recognize that.  Goodbye.")
-    }
 }

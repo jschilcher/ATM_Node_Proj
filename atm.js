@@ -13,29 +13,44 @@ function validateUserPin(enteredPin){
     }    
 }
 
-function getCurrentBalance(balance){
-    console.log(account.balance);
+let bankBalance = account.balance;
+function getCurrentBalance(bankBalance){
+    console.log(bankBalance);
 }
 
-function makeWithDrawl(userInput){
-    let userInput = prompt("How much would you like to withdrawl?");
-    return subtractTwoNumbers(getCurrentBalance(balance), userInput);
+function makeWithDrawl(userWithDrawl){
+    // let userWithDrawl = prompt("How much would you like to withdrawl?");
+    return subtractTwoNumbers(bankBalance, userWithDrawl);
 }
 
-function makeADeposit(userInput){
-    let userInput = prompt("How much would you like to deposit?");
-    return addTwoNumbers(getCurrentBalance(balance), userInput);
+function makeADeposit(userDeposit){
+    userDeposit = prompt("How much would you like to deposit?");
+    return addTwoNumbers(bankbalance, userDeposit);
+}
+
+function timeToExit(userInput){
+    // let userInput = prompt("Is there anything else you would like to do today?");
+    if(userInput == "yes"){
+        atmMenu
+    }
+    else if(userInput == "no"){
+        console.log("Have an AMAZING day!! Goodbye!")
+    }
+    else{
+        console.log("I am sorry I didn't recognize that.  Goodbye.")
+    }
 }
 
 function subtractTwoNumbers(numberOne, numberTwo){
-    return numberOne - numberTwo;
+    return numberOne - parseInt(numberTwo);
 }
 
 function addTwoNumbers(numberOne, numberTwo){
-    return numberOne + numberTwo;
+    return numberOne + parseInt(numberTwo);
 }
 
 module.exports.validate = validateUserPin;
 module.exports.getBalance = getCurrentBalance;
 module.exports.withdrawl = makeWithDrawl;
-module.exports.deposit = makeWithDrawl;
+module.exports.deposit = makeADeposit;
+module.exports.exit = timeToExit;
