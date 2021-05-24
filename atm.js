@@ -24,16 +24,17 @@ function makeWithDrawl(userWithDrawl){
 }
 
 function makeADeposit(userDeposit){
-    userDeposit = prompt("How much would you like to deposit?");
-    return addTwoNumbers(bankbalance, userDeposit);
+    // let userDeposit = prompt("How much would you like to deposit?");
+    return addTwoNumbers(bankBalance, userDeposit);
 }
 
-function timeToExit(userInput){
-    // let userInput = prompt("Is there anything else you would like to do today?");
+function timeToExit(string){
+    let userInput = prompt("Is there anything else you would like to do today?");
+    userInput = string
     if(userInput == "yes"){
         atmMenu
     }
-    else if(userInput == "no"){
+    else if(string == "no"){
         console.log("Have an AMAZING day!! Goodbye!")
     }
     else{
@@ -54,3 +55,4 @@ module.exports.getBalance = getCurrentBalance;
 module.exports.withdrawl = makeWithDrawl;
 module.exports.deposit = makeADeposit;
 module.exports.exit = timeToExit;
+module.exports.balance = bankBalance;
