@@ -11,7 +11,7 @@ let enteredPin = prompt();
 
 atm.validate(enteredPin);
 
-let atmMenu = prompt("What would you like to do? check balance, withdraw, deposit, or exit?");
+let atmMenu = promptFor("What would you like to do? check balance, withdraw, deposit, or exit?", chars);
 
 switch(atmMenu){
     case "check balance":
@@ -19,16 +19,27 @@ switch(atmMenu){
         // timeToExit(string);
         break;
     case "withdraw":
-        let userWithDrawl = prompt("How much would you like to withdrawl?");
+        let userWithDrawl = promptFor("How much would you like to withdrawl?", chars);
         let newBalance = atm.withdrawl(userWithDrawl);
         console.log(newBalance);
         // atm.exit(string);
         break;
     case "deposit":
-        let userDeposit = prompt("How much would you like to deposit?");
+        let userDeposit = promptFor("How much would you like to deposit?", chars);
         let balanceAfterDeposit = atm.deposit(userDeposit);
         console.log(balanceAfterDeposit);
         break;
     case "exit":
         console.log("Have a great day!");
 }
+
+function promptFor(question, valid){
+    do{
+      var response = prompt(question).trim();
+    } while(!response || !valid(response));
+    return response;
+  }
+
+  function chars(input){
+    return true; // default validation only
+  }
